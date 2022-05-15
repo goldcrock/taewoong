@@ -3,6 +3,8 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import okhttp3.*
 
@@ -10,7 +12,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        dataUrl()
+        loadButton();
+    }
+
+    private fun loadButton() {
+        val firstButton = findViewById<Button>(R.id.firstButton);
+        firstButton.setOnClickListener{
+            dataUrl();
+        }
     }
     private fun dataUrl() {
         //資料網址
